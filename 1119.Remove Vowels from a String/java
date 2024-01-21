@@ -1,0 +1,19 @@
+public class Solution {
+
+    public static boolean cheak ( char s ) {
+
+        if( (s == 'a') || (s == 'e') || (s=='i') || (s=='o') || (s == 'u') ) return true;
+        return false; 
+    }
+
+    public String removeVowels(String s) {
+      
+        String ans = "";
+
+        for( int i=0;i<s.length();i++ ) {     
+             if( !cheak ( s.charAt(i) ) ) ans += String.valueOf(s.charAt(i));      
+        }
+        
+        return ans;
+    }
+}
