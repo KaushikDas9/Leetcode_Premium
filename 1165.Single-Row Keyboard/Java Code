@@ -1,0 +1,21 @@
+public class Solution {
+    public int calculateTime(String keyboard, String word) {
+    
+        HashMap<Character,Integer> map = new HashMap<>();
+        
+        for( int i=0;i<keyboard.length();i++  ) { 
+
+            map.put( keyboard.charAt(i) , i );
+        }
+
+        int move=0;
+        int prev =0 ;
+        for( int i=0;i<word.length();i++ ) { 
+            
+            move +=  Math.abs( map.get( word.charAt(i) ) - prev ) ;
+            prev = map.get( word.charAt(i) );
+        }
+
+        return move;
+    }
+}
